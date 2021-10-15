@@ -61,7 +61,7 @@ namespace Microsoft.Xna.Framework.Graphics
 #endif
 
         // The active render targets.
-        readonly SharpDX.Direct3D11.RenderTargetView[] _currentRenderTargets = new SharpDX.Direct3D11.RenderTargetView[4];
+        readonly SharpDX.Direct3D11.RenderTargetView[] _currentRenderTargets = new SharpDX.Direct3D11.RenderTargetView[8];
 
         // The active depth view.
         SharpDX.Direct3D11.DepthStencilView _currentDepthStencilView;
@@ -1239,6 +1239,8 @@ namespace Microsoft.Xna.Framework.Graphics
                     return PrimitiveTopology.TriangleList;
                 case PrimitiveType.TriangleStrip:
                     return PrimitiveTopology.TriangleStrip;
+                case PrimitiveType.PointList:
+                    return PrimitiveTopology.PointList;
             }
 
             throw new ArgumentException();
